@@ -1,0 +1,232 @@
+ 
+%
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[aspectratio=1610]{beamer}
+%\documentclass[aspectratio=149]{beamer}
+%\documentclass[aspectratio=54]{beamer}
+%\documentclass[aspectratio=43]{beamer}
+%\documentclass[aspectratio=32]{beamer} 
+
+
+\usepackage[utf8]{inputenc}                                      
+\usepackage[T1]{fontenc}  
+\usepackage[polish]{babel} 
+
+
+\ifxetex  % XeLaTeX
+   \usepackage{fontspec}
+   \defaultfontfeatures{Mapping=tex--text}   % to support TeX conventions like dashes etc
+   \usepackage{xltxtra} % extra customisation for XeLaTeX
+%   \setsansfont{Linux Biolinum O}
+%   \setmainfont[Ligatures={Common,TeX}, Numbers={OldStyle}]{Linux Libertine O}
+%      \setsansfont{Barlow Semi Condensed}
+%      \setmainfont{PT Serif}
+%   \setsansfont{Ubuntu}
+%   \setmonofont{Ubuntu Mono}
+
+\else  % LaTeX
+   \usepackage[T1]{fontenc}
+   \usepackage[utf8]{inputenc}
+%   \usepackage[osf,tt=false]{libertine}
+\fi
+
+
+\uselanguage{polish}
+\languagepath{polish}
+\deftranslation[to=polish]{Definition}{Definicja}
+\deftranslation[to=polish]{Example}{Przykład}
+
+\usetheme[sectionpage=progressbar,subsectionpage=progressbar,block=fill,background=light]{metropolis}
+
+
+
+
+
+\usepackage{indentfirst}
+%\usepackage{graphicx} 
+%\usepackage{hyperref}
+%\usepackage{booktabs}
+%\usepackage{tikz}
+%\usetikzlibrary{arrows}
+%\usepackage{pgfplots}
+%\usepackage{subfigure}
+%\usepackage{color}
+%\usepackage{listings}
+%\usepackage{filecontents}
+%\usepackage{fontawesome5}
+%\usepackage{amssymb}
+
+
+
+%\usepackage[backend=bibtex,style=alphabetic]{biblatex}
+%plain --> \usepackage[style=numeric]{biblatex}
+%abbrv --> \usepackage[style=numeric,firstinits=true]{biblatex}
+%unsrt --> \usepackage[style=numeric,sorting=none]{biblatex}
+%alpha --> \usepackage[style=alphabetic]{biblatex}
+
+%\newrobustcmd*
+\newcommand%
+{\footfullcitenomark}{%
+  \AtNextCite{%
+    \let\thefootnote\relax
+    \let\mkbibfootnote\mkbibfootnotetext}%
+  \footfullcite}
+\newcommand{\stopka}[1]{\footfullcitenomark{#1}}  
+
+
+
+\newcommand{\hcancel}[1]{%
+   \tikz[baseline=(tocancel.base)]{
+      \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
+      \draw[red, thick] (tocancel.south west) -- (tocancel.north east);
+   }%
+}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+
+%\setbeamertemplate{footline}
+%    {\begin{beamercolorbox}[sep=1ex]{author in head/foot}
+%      \rlap{\textit{\insertshorttitle}}\hfill\insertauthor\hfill\llap{\insertframenumber}%
+%      \end{beamercolorbox}%
+%}
+
+ 
+\newcommand{\HUGE}{\fontsize{35}{30}\selectfont}
+%\newcommand{\veryHuge}{\fontsize{65}{55}\selectfont}
+\newcommand{\veryHuge}{\fontsize{45}{40}\selectfont}
+
+\usepackage{color}
+\definecolor{cornflowerblue}{cmyk}{0.65, 0.13, 0   , 0   }
+
+\newcommand*{\myfont}{\fontfamily{LinuxLibertineT-OsF}\selectfont}
+
+\newcommand{\cytowanie}[1]{%
+   \raisebox{-0.2cm}{\myfont\color{blue}\veryHuge «}\myfont\Large #1\raisebox{-0.2cm}{\myfont\color{blue}\veryHuge »}
+} 
+
+
+
+\title[tytuł krótki]{Tytuł długi}
+\subtitle{podtytuł}
+\author{autor(zy)}
+\institute[PolSl]{\includegraphics[scale=0.25]{graf/politechnika_sl_logo_poziom_pl}}
+
+
+%\date{23 marca 2021}
+\logo{\includegraphics[scale=0.2]{graf/politechnika_sl_logo_pion_pl.eps}}
+
+\frenchspacing
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Spis treści}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\begin{frame}[fragile]{Proporcje slajdów}
+Propocje slajdów można ustawić na samym początku kodu źródłowego:
+
+\begin{verbatim}
+\documentclass[aspectratio=169]{beamer}  % 16:9
+\documentclass[aspectratio=1610]{beamer} % 16:10
+\documentclass[aspectratio=149]{beamer}  % 14:9
+\documentclass[aspectratio=54]{beamer}   %  5:4
+\documentclass[aspectratio=43]{beamer}   %  4:3
+\documentclass[aspectratio=32]{beamer}   %  3:2
+\end{verbatim}
+\end{frame} 
+
+
+
+\section{Sekcja 1}
+
+\begin{frame}{\LaTeX\ifxetex, \XeLaTeX\fi}
+
+Szablon można skompilować zarówno \LaTeX em, jak i Xe\LaTeX em. Będą użyte inne rodziny fontów. 
+
+Xe\LaTeX\ \ifxetex(\XeLaTeX) \fi używa fontu Fira, \LaTeX\ używa domyślnego fontu.
+
+\ifxetex
+Unicode: 
+źdźbło żółć fuŝĥoraĵo æbletræ ¡¿piña?! smršť à ă ä á â ǎ ą å ā ã ạ ȧ æ
+ì ï ĩ ī ĭ í į ı i ǐ î  
+ò ö õ ō ó ő ø ŏ ǒ ô ǫ 
+đ ð p þ b ťęľěģŕåþħ
+şœșŋøŵý
+äße 
+γλῶττα
+љубав међа 
+ѕвезда їжак
+\fi 
+\end{frame}
+
+\subsection{Podsekcja 1}
+
+\begin{frame}{Tytuł}
+\begin{itemize}
+\item raz
+\item dwa
+\item trzy \alert{alert}
+\end{itemize}
+\end{frame}
+
+\subsection{Podsekcja 2}
+
+
+
+\begin{frame}{Wzory}
+\begin{align*}
+A = \int_{-\infty}^{0} \exp \left( - \frac{(x-m)^2}{2\sigma^2}\right) dx
+\end{align*}
+\end{frame}
+
+\begin{frame}{Grafiki}
+\begin{center}
+\includegraphics[width=\textwidth]{./graf/politechnika_sl_logo_poziom_pl.eps}
+\end{center}
+\end{frame}
+
+\section{Bloki}
+
+\begin{frame}{Bloki}
+\begin{definition}[Koercja]
+Spiralna dyslokacja efemerydy Kuppelweisera
+\end{definition}
+
+\begin{exampleblock}{Przykład}
+Przykładowo, gdy $x < \pi$, wtedy $\sum_{i=1}^{n} \frac{1}{i}$.
+\end{exampleblock}
+
+\begin{block}{Tytuł bloku}
+Zawartość bloku …
+\end{block}
+
+\begin{alertblock}{Uwaga!}
+Memento mori!
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}[standout]
+slajd negatywowy
+\end{frame}
+
+\maketitle
+
+\appendix 
+
+\begin{frame}{Dodatek}
+\begin{enumerate}
+\item Slajdy w dodatku nie są wliczane do liczby stron prezentacji. 
+\item Nie mają numerów stron.
+\item Nie wpływają na pasek postępu slajdów.
+\end{enumerate}
+\end{frame}
+
+\end{document}
+
