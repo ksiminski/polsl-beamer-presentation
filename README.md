@@ -4,5 +4,5 @@
 
 [PL] 🇵🇱 Prezentacja w beamerze dla LaTeXa i XeLaTeXa z logiem Politechniki Śląskiej
 
-[EN] 🇬🇧󠁧Beamer presentation for󠁢󠁥󠁮󠁧󠁿 Land XeLaTeXthe logo of the Silesian University of Technology 
+[EN] 🇬🇧 󠁧Beamer presentation for󠁢󠁥TeX and XeLaTeX with the logo of the Silesian University of Technology 
 
