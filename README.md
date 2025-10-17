@@ -1,6 +1,6 @@
 # polsl-beamer-presentation
 
-![Politechnika Śląska](politechnika_sl_logo_poziom_pl_rgb.png)
+![Politechnika Śląska](polsl.png)
 
 [PL] 🇵🇱 Prezentacja w beamerze dla LaTeXa i XeLaTeXa z logiem Politechniki Śląskiej
 
